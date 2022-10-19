@@ -1,0 +1,70 @@
+---
+title: "Stroke Risk Descriptive Graphical Report"
+author: Michela Stephens
+output:
+  html_document:
+    font adjustment: +2
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Introduction
+
+
+<p style="font-family: times, serif; font-size:12pt">
+This dataset contains information collected from a clinical trial of stroke risk. It contains a total of 5110 patients who were followed for a ten-year interval. Information collected includes gender, age, hypertension, heart disease, residence type, average blood glucose level, BMI, and smoking status. This report shows a graphical analysis of the dataset. 
+</p>
+
+
+
+### Loading Data
+
+```{r, read-data, warning = FALSE, message = FALSE}
+here::i_am("StrokeReport_Graphical.Rmd")
+stroke_data <- read.csv(here::here("Data/healthcare-dataset-stroke-data.csv"))
+```
+
+
+### Descriptive Analysis - Bar Graph of Smoking Status
+
+```{r, figure-one, echo = FALSE}
+#| fig.align = "center",
+#| out.width = "800px"
+
+readRDS(file = here::here("output/bar_graph.rds"))
+```
+
+<br>
+
+
+
+<p style="font-family: times, serif; font-size:12pt">
+The graph above shows the counts for smoking status among the study participants. The most common category was never smoker and the least common category was current smoker. There are a large count of individuals with unknown smoking status, which may cause problems in an exploratory analysis.
+</p>
+
+
+<br>
+
+### Logisitic Regression Model
+
+```{r, plot-data}
+#| fig.align = "center",
+#| out.width = "100px"
+readRDS(
+  file = here::here("output/regression_mod.rds")
+)
+
+```
+<br>
+
+
+
+<p style="font-family: times, serif; font-size:12pt">
+The graph above shows the graphical representation for the logistic regression model. It shows a significant association between average glucose level and risk for stroke. 
+</p>
+
+
+<br>
+

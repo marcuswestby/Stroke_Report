@@ -1,0 +1,80 @@
+---
+title: "Stroke Risk Descriptive Table 1"
+author: Michela Stephens
+output:
+  html_document:
+    font adjustment: +2
+date: "2022-09-21"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Introduction
+
+
+
+<p style="font-family: times, serif; font-size:12pt">
+This dataset contains information collected from a clinical trial of stroke risk. It contains a total of 5110 patients who were followed for a ten-year interval. Information collected includes gender, age, hypertension, heart disease, residence type, average blood glucose level, BMI, and smoking status. This report shows the table 1 characteristics for the dataset. 
+</p>
+
+
+
+### Loading Data
+
+```{r, read-data, warning = FALSE, message = FALSE}
+here::i_am("StrokeReport_Descriptive.Rmd")
+stroke_data <- read.csv(here::here("Data/healthcare-dataset-stroke-data.csv"))
+```
+
+
+### Table 1 - Descriptive analysis
+
+```{r, table-one, echo = FALSE, warning = FALSE, message = FALSE}
+readRDS(
+  file = here::here("output/table1.rds")
+)
+  
+```
+
+<br>
+
+
+<p style="font-family: times, serif; font-size:12pt">
+The study population includes 5,110 patients (mean age, 45 years; 2,994 women [59%]; mean BMI 28 kg/m2) among whom 249 had a stroke. Of the 5,110 patients, 498 (9.7%) had hypertension, 276 (5.4%) had heart disease, and 2,308 (45%) had blood glucose levels of greater than 95 mg/dL. 
+</p>
+
+
+
+
+### Descriptive Analysis - Bar Graph of Smoking Status
+
+```{r, figure-one, echo = FALSE}
+#| fig.align = "center",
+#| out.width = "800px"
+library(ggplot2)
+
+ bar_graph <- ggplot(stroke_data, aes(smoking_status)) +
+  geom_bar(fill = "#0073C2FF") +
+  theme_classic() 
+ 
+ bar_graph2 <- bar_graph + labs(x="Smoking Status", y = "Count", 
+                                title = "Smoking Status Counts for Study Population")
+ bar_graph2
+
+
+```
+
+<br>
+
+
+
+<p style="font-family: times, serif; font-size:12pt">
+The graph above shows the counts for smoking status among the study participants. The most common category was never smoker and the least common category was current smoker. There are a large count of individuals with unknown smoking status, which may cause problems in the exploratory analysis.
+</p>
+
+
+<br>
+
+
