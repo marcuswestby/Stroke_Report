@@ -4,7 +4,6 @@ author: Michela Stephens
 output:
   html_document:
     font adjustment: +2
-date: "2022-09-21"
 ---
 
 ```{r setup, include=FALSE}
@@ -46,35 +45,4 @@ The study population includes 5,110 patients (mean age, 45 years; 2,994 women [5
 </p>
 
 
-
-
-### Descriptive Analysis - Bar Graph of Smoking Status
-
-```{r, figure-one, echo = FALSE}
-#| fig.align = "center",
-#| out.width = "800px"
-library(ggplot2)
-
- bar_graph <- ggplot(stroke_data, aes(smoking_status)) +
-  geom_bar(fill = "#0073C2FF") +
-  theme_classic() 
- 
- bar_graph2 <- bar_graph + labs(x="Smoking Status", y = "Count", 
-                                title = "Smoking Status Counts for Study Population")
- bar_graph2
-
-
-```
-
 <br>
-
-
-
-<p style="font-family: times, serif; font-size:12pt">
-The graph above shows the counts for smoking status among the study participants. The most common category was never smoker and the least common category was current smoker. There are a large count of individuals with unknown smoking status, which may cause problems in the exploratory analysis.
-</p>
-
-
-<br>
-
-

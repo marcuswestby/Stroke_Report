@@ -51,7 +51,7 @@ The graph above shows the counts for smoking status among the study participants
 
 ```{r, plot-data}
 #| fig.align = "center",
-#| out.width = "100px"
+#| out.width = "800px"
 readRDS(
   file = here::here("output/regression_mod.rds")
 )
