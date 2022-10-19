@@ -1,4 +1,4 @@
-#Generate the final report
+# Generate the final report
 
 `makefile`
 -contains rule for building final report
