@@ -2,6 +2,8 @@
 
 `makefile`
 -contains rule for building final report
+-contains rule for cleaning output
+-contains rule for synchronizing package library
 -type "make 'StrokeReport_Final.html" into terminal to generate the final report
 -type "make" to generate descriptive, graphical, and final reports
 
@@ -37,3 +39,6 @@
 -reads the bar graph object
 -reads the regression model graph object
 
+# Synchronize Package Library
+
+- type "make install" in the terminal to synchronize package library
