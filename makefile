@@ -23,3 +23,8 @@ clean:
 .PHONY: install	
 install:
 	Rscript -e "renv::restore(prompt = FALSE)"
+
+# Docker Rules
+project_image:
+	docker build -t michelastephens/project_image . 
+	

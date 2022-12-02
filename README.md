@@ -4,8 +4,7 @@
 -contains rule for building final report
 -contains rule for cleaning output
 -contains rule for synchronizing package library
--type "make 'StrokeReport_Final.html" into terminal to generate the final report
--type "make" to generate descriptive, graphical, and final reports
+-type "make" in the terminal to generate descriptive, graphical, and final report
 
 # Code Description
 
@@ -42,3 +41,12 @@
 # Synchronize Package Library
 
 - type "make install" in the terminal to synchronize package library
+
+# Building the Docker Image 
+
+- type "docker build -t project_image bash" in the terminal to build the docker image. 
+- type "docker "
+# Creating the report with Docker
+
+
+
