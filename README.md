@@ -52,11 +52,12 @@
 - navigate to the following link to pull the docker image <https://hub.docker.com/repository/docker/michelastephens/project_image>
 - type "docker build -t michelastephens/project_image bash" in the terminal to build the docker image 
 - type "docker run -it michelastephens/project_image bash" in the terminal
-- while in the container, type "make" to build the report
+- type "make" to build the report inside the container
 
 # Automated version of the image
 
 - for an automatically generated report, type "make report/StrokeReport_Final.html" in the terminal 
+- the final report will appear in a local folder called "report"
 
 
 
