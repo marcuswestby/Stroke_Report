@@ -18,20 +18,21 @@ output/regression_mod.rds:
 	
 .PHONY: clean
 clean:
-	rm -f output/*.rds && rm -f *.html
+	rm -f output/*.rds && rm -f *.html && rm -f report/*.html
 
 .PHONY: install	
 install:
 	Rscript -e "renv::restore(prompt = FALSE)"
 
 # Docker Rules
+
 michelastephens/project_image:
 	docker build -t michelastephens/project_image .
 	touch $@
 
 # rule to build report automatically in container
 report/StrokeReport_Final.html: 
-	docker run -v "/$$(pwd)/report":/Stroke_Report/report michelastephens/project_image
+	docker run -v /$$(pwd)/report:/Stroke_Report/report michelastephens/project_image
 
 
 	

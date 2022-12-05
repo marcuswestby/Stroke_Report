@@ -23,6 +23,7 @@ COPY renv/settings.dcf renv
 
 RUN Rscript -e "renv::restore(prompt = FALSE)"
 
+RUN mkdir report
 
-
+CMD make && mv StrokeReport_Final.html report
 
